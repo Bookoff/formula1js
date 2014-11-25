@@ -1,0 +1,119 @@
+/* app css stylesheet */
+html,
+body{
+  background: url('../images/pit_stop.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+.navbar .container img {
+  padding: 0 0 20px 0;
+}
+
+.menu {
+  border-bottom: 0.1em solid black;
+  list-style: none;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+.panel {
+  opacity: .85;
+}
+
+.panel img {
+  opacity: 1;
+}
+
+.drivers img.flags {
+  padding-right: 5px;
+}
+
+.driver .panel-heading .dorsal {
+  font-size: 5em;
+  font-weight: bold;
+  position: absolute;
+  top: 0px;
+  right: 27px;
+}
+
+.driver .driver-info {
+  padding: 10px 0 10px 0;
+}
+
+.driver ul.info {
+  list-style-type: none;
+  padding: 0;
+}
+
+.driver ul.info li {
+  padding-bottom: 13px;
+}
+
+.driver img.flags {
+  padding-right: 5px;
+  position: relative;
+  top: -5px;
+}
+
+.avatar img.img {
+  position: relative;
+}
+.avatar img.flag {
+  position: absolute;
+  top: 165px;
+  left: 20px;
+}
+
+table.races td.finished {
+  color: green;
+}
+
+table.races td.retired, table.races td.disqualified, table.races td.accident,
+table.races td.collision, table.races td.exhaust {
+  color: red;
+}
+
+#footer {
+  background-color: #313131;
+  color: white;
+  height: 60px;
+}
+
+.container.credit {
+  margin: 20px auto;
+}

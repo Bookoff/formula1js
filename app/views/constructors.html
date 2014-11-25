@@ -1,0 +1,41 @@
+<!--
+CONSTRUCTORS VIEW
+-->
+<div class="panel panel-default">
+  <div class="panel-heading"><strong>{{season}}</strong> | <small>Round: {{round}}</small> | Constructor Championship Standings
+    <div class="input-group pull-right">
+      <input type="text" ng-model="constFilter" placeholder=" Search constructor" />
+      &nbsp;<i class="glyphicon glyphicon-search"></i>
+    </div>
+  </div>
+  <table class="table table-hover table-responsive drivers">
+    <thead>
+      <tr>
+        <th>Rank.</th>
+        <th>Constructor</th>
+        <th>Nationality</th>
+        <th>Points</th>
+        <th>Wins</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-show="constructorsList.length > 0 && filteredConstructors.length <= 0">
+        <td colspan="5">No results found. Please specify search</td>
+      </tr>
+      <tr ng-repeat="constructor in filteredConstructors = (constructorsList | filter:searchFilter)">
+        <td>{{constructor.position}}</td>
+        <td>
+          <a href="#/constructors/{{constructor.Constructor.constructorId}}">
+            {{constructor.Constructor.name}}
+          </a>
+        </td>
+        <td>
+          <img ng-src="images/flags/{{constructor.Constructor.nationality}}.png" class="flags" alt="{{constructor.Constructor.nationality}}" />
+            {{constructor.Constructor.nationality}}
+        </td>
+        <td>{{constructor.points}}</td>
+        <td>{{constructor.wins}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

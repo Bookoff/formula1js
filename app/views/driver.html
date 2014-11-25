@@ -1,0 +1,75 @@
+<section id="main" class="driver">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <a href="./#/drivers"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
+          <h3>{{driver.Driver.givenName}} {{driver.Driver.familyName}}</h3>
+          <span class="pull-right dorsal">{{driver.Driver.permanentNumber}}</span>
+        </div>
+          <div class="row driver-info">
+            <div class="avatar col-xs-6 col-sm-6">
+              <img ng-show="driver" ng-src="images/drivers/{{driver.Driver.driverId}}.jpg" class="img center-block" />
+            </div>
+            <div class="driver-status col-xs-6 col-sm-6">
+              <ul class="info">
+                <li class=""><img ng-show="driver" ng-src="images/flags/{{driver.Driver.nationality}}.png" class="flag" /></li>
+                <li class="">Country: {{driver.Driver.nationality}}</li>
+                <li class="">Team: {{driver.Constructors[0].name}}</li>
+                <li class="">Birth: {{driver.Driver.dateOfBirth | date:'dd-MM-yyyy'}}</li>
+                <li class=""><i class="glyphicon glyphicon-new-window"></i>&nbsp;<a href="{{driver.Driver.url}}" target="_blank">Biography</a></li>
+              </ul>
+            </div>
+          </div>
+      </div>
+    </div>
+
+
+    <div class="main-content col-xs-12 col-sm-8">
+      <!-- Chartistjs
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3>Driver's Stats</h3>
+        </div>
+          <div class="row driver-stats">
+            <chartist class="ct-chart ct-golden-section" chartist-data="data" chartist-chart-type="Line" chartist-chart-options="options" chartist-responsive-options="responsiveOptions" chartist-events="events"></chartist>
+          </div>
+      </div> -->
+
+      <div class="panel panel-default">
+      <div class="panel-heading">Formula 1 <strong>{{season}}</strong> results
+        <div class="input-group pull-right">
+          <input type="text" ng-model="search.raceName" placeholder=" Search Grand Prix" />
+          &nbsp;<i class="glyphicon glyphicon-search"></i>
+        </div>
+      </div>
+      <table class="table table-responsive races">
+        <thead>
+          <tr>
+            <th>Round</th>
+            <th>Grand Prix</th>
+            <th>Team</th>
+            <th>Grid</th>
+            <th>Race</th>
+            <th>Status</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-show="races.length > 0 && filteredRaces.length <= 0">
+            <td colspan="5">No results found. Please specify search</td>
+          </tr>
+          <tr ng-repeat="race in filteredRaces = (races | filter:search:strict)">
+            <td>{{race.round}}</td>
+            <td><img  ng-src="images/flags/{{race.Circuit.Location.country}}.png" class="flags" /> {{race.raceName}}</td>
+            <td>{{race.Results[0].Constructor.name}}</td>
+            <td>{{race.Results[0].grid}}</td>
+            <td>{{race.Results[0].position}}</td>
+            <td class="{{race.Results[0].status | lowercase}}">{{race.Results[0].status}}</td>
+            <td>{{race.Results[0].Time.time}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
