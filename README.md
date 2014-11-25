@@ -8,6 +8,6 @@ Diseño basado en Bootstrap.
 La API es: http://ergast.com/mrd/
 
 
- * Falta por implementar:
+ Falta por implementar:
  - Cambio de temporada
  - Gráficas de temporada
