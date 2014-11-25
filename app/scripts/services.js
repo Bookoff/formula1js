@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('F1FeederApp.services', [])
+angular.module('Formula1JS.services', [])
   .factory('ergastAPIservice', function($http) {
     var ergastAPI = {};
 

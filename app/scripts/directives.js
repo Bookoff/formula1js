@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('F1FeederApp.directives', [])
+angular.module('Formula1JS.directives', [])
     .directive('navbar', function () {
       return {
         restrict: 'E',

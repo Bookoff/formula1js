@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name F1FeederApp.controller:driversController
+ * @name Formula1JS.controller:driversController
  * @description
  * # driversController
- * Controller of the F1FeederApp
+ * Controller of the Formula1JS
  */
-angular.module('F1FeederApp.controllers', [])
+angular.module('Formula1JS.controllers', [])
 
   /* Drivers controller */
   .controller('driversController', function($scope, $routeParams, ergastAPIservice) {

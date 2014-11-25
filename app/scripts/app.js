@@ -2,17 +2,17 @@
 
 /**
  * @ngdoc overview
- * @name F1FeederApp
+ * @name Formula1JS
  * @description
- * # F1FeederApp
+ * # Formula1JS
  *
  * Main module of the application.
  */
 angular
-  .module('F1FeederApp', [
-    'F1FeederApp.controllers',
-    'F1FeederApp.services',
-    'F1FeederApp.directives',
+  .module('Formula1JS', [
+    'Formula1JS.controllers',
+    'Formula1JS.services',
+    'Formula1JS.directives',
     'ngRoute',
     'ngChartist'
   ])
